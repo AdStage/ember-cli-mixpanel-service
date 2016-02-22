@@ -87,6 +87,12 @@ Alias of the mixpanel `alias` function
 
 Alias of the mixpanel `register` function
 
+### unregister
+
+`unregister: function(property)`
+
+Alias of the mixpanel `unregister` function
+
 ### peopleSet
 
 `peopleSet: function(attributes)`

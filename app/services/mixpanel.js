@@ -59,13 +59,23 @@ export default Ember.Service.extend({
         }
     },
 
-  register: function(traits, options, callback) {
+    register: function(traits, options, callback) {
         if (this.pageHasAnalytics()) {
             window.mixpanel.register(traits, options, callback);
         }
 
         if (this.logTrackingEnabled()) {
             this.logTracking('register user', traits, options);
+        }
+    },
+
+    unregister: function(property) {
+        if (this.pageHasAnalytics()) {
+            window.mixpanel.unregister(property);
+        }
+
+        if (this.logTrackingEnabled()) {
+            this.logTracking('unregister ', property);
         }
     },
 
